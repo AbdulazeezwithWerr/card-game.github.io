@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height:100%;
+    background-size: cover;
+    background-repeat: no-repeat;    
+    background-image: url(pics/bgc2.jpg);
+}
+
+#sub-body {
+    position: absolute;
+    /* z-index: 1; */
+    top: 0;
+    padding: 0;
+    width: 100vw;
+    height:100vh;
+    background-color: rgba(188, 223, 188, 0);
+}
+
+.card {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    margin:10vh auto;
+    margin-bottom: 2vh;
+    align-items: center;
+    justify-content: space-evenly;                 
+}
+
+.player , .computer,.player-bg , .computer-bg {
+    width: 45vw;
+    height: 75vh;
+    border-radius: 15px;
+    border: 2px solid black ;
+    background-color: rgba(75, 167, 52, 0);
+    
+}
+
+.player-bg , .computer-bg {
+    top: 10vh;
+    z-index: -2;
+    filter: blur(5px);
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    box-shadow: 0px -3px 48px 11px rgba(0,0,0,0.85);
+    -webkit-box-shadow: 0px -3px 48px 11px rgba(0,0,0,0.85); 
+    background-image: url(pics/bgc3.jpg);
+}
+.player-bg {
+    left: 3vw;
+}
+.computer-bg {
+    left: 51vw;
+}
+
+.groupBtn {
+    width: 30vw;
+    height: 5vh;
+    display: flex;
+    margin: 0vh auto;
+    justify-content: space-evenly;
+}
+
+button {    
+    position: absolute;
+    z-index: 3;
+    width: 150px;
+    height: 5vh;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;    
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Montagu Slab', serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+}
+.player-btn {
+    animation-name: player-button;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.player-btn:hover{
+    border: 1px solid red;
+    background-color: red;
+    color: #fff;
+    transition: 1s;
+}
+
+
+
+
+@keyframes player-button {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(-67%);
+    }
+    
+}
+
+.computer-btn {
+    animation-name: computer-button;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.computer-btn:hover{
+    border: 1px solid red;
+    background-color: red;
+    color: #fff;
+    transition: 1s;
+}
+@keyframes computer-button {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(63%);
+    }
+    
+}
+.win {
+    color: rgb(0, 0, 0);
+    position: absolute;
+    z-index: 3;
+    top: 35vh;
+    left: 40vw;
+    font-size: 3rem;
+    font-weight: bolder; 
+    text-shadow: 0px 0px 15px rgba(163, 2, 2, 0.88);
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Montagu Slab', serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+    animation-name: win;
+    animation-duration: 2s;
+}
+@keyframes win {
+    0%{
+        transform: scaleZ(20deg);
+        font-size: 2rem;
+    }
+    100%{
+        transform: scaleZ(0deg);
+        font-size: 5rem;
+
+    }
+    
+}
+   
+
+.lose {
+    position: absolute;
+    z-index: 3;
+    color: red;
+    top: 35vh;
+    left: 40vw;
+    font-size: 3rem;
+    font-weight: bolder; 
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.88);
+     font-family: 'Bebas Neue', cursive;
+    font-family: 'Montagu Slab', serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif; 
+}
+.image{
+    width: 100px;    
+    height: 200px; 
+    margin-left:50px;
+    margin-top: 20%;
+}
+
+
+@media (max-width: 850px){
+    .image{
+        width: 50px;
+        height: 100px;
+        margin-left: 25px;
+        margin-top: 37%;
+    }
+    .win {
+        color: rgb(0, 0, 0);
+        position: absolute;
+        z-index: 3;
+        top: 35vh;
+        left: 35vw;
+        font-size: 2rem;
+        font-weight: bolder; 
+        text-shadow: 0px 0px 15px rgba(163, 2, 2, 0.88);
+        font-family: 'Bebas Neue', cursive;
+        font-family: 'Montagu Slab', serif;
+        font-family: 'Playfair Display', serif;
+        font-family: 'Poppins', sans-serif;
+    }
+       
+    
+    .lose {
+        position: absolute;
+        z-index: 3;
+        color: red;
+        top: 35vh;
+        left: 35vw;
+        font-size: 2rem;
+        font-weight: bolder; 
+        text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.88);
+         font-family: 'Bebas Neue', cursive;
+        font-family: 'Montagu Slab', serif;
+        font-family: 'Playfair Display', serif;
+        font-family: 'Poppins', sans-serif; 
+    }
+    .player-btn {
+        animation-name: player-button;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    .player-btn:hover{
+        border: 1px solid red;
+        background-color: red;
+        color: #fff;
+        transition: 1s;
+    }
+   
+    @keyframes player-button {
+        0%{
+            transform: translateX(-100%);
+        }
+        100%{
+            transform: translateX(-60%);
+}
+    }
+    .computer-btn {
+        animation-name: computer-button;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    .computer-btn:hover{
+        border: 1px solid red;
+        background-color: red;
+        color: #fff;
+        transition: 1s;
+    }
+    @keyframes computer-button {
+        0%{
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(60%);
+        }
+        
+    }
+}
+   
